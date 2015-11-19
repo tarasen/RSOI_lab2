@@ -24,7 +24,7 @@ POST 		/token
 OAuth query:
 `/auth?client_id={YOUR_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URL}&state={SOME_STATE}`
 
-Token request must contain next patameters:
+Token request must contain next parameters:
 * ClientId
 * SecretKey
 * RederectUri
