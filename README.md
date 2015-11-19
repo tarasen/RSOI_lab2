@@ -9,6 +9,12 @@ POST		/picures
 PUT			/pictures/{id}
 DELETE		/pictures/{id}
 
+GET			/artists
+GET			/artists/{id}
+POST		/artists
+PUT			/artists/{id}
+DELETE		/artists/{id}
+
 GET 		/profile
 
 GET 		/auth
@@ -18,7 +24,7 @@ POST 		/token
 OAuth query:
 `/auth?client_id={YOUR_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URL}&state={SOME_STATE}`
 
-Token request must contain next patameters:
+Token request must contain next parameters:
 * ClientId
 * SecretKey
 * RederectUri
