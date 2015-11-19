@@ -11,6 +11,7 @@ DELETE		/pictures/{id}
 
 GET			/artists
 GET			/artists/{id}
+GET			/artists/{id}/pictures
 POST		/artists
 PUT			/artists/{id}
 DELETE		/artists/{id}
