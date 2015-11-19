@@ -67,5 +67,17 @@ namespace PictureAuction.Api.ServiceModel.Routes
         public class UpdateArtist : ArtistExtendedDTO, IReturn<ArtistExtendedDTO>
         {
         }
+
+        [Route("/artists/{Id}/pictures", HttpMethods.Get)]
+        public class GetArtistPictures : IReturn<PageResult<PictureRoutes.PictureDTO>>
+        {
+            public int Id { get; set; }
+
+            [DataMember(Name = "page")]
+            public int PageNumber { get; set; } = 1;
+
+            [DataMember(Name = "page_size")]
+            public int PageSize { get; set; } = 15;
+        }
     }
 }

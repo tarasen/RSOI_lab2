@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using AutoMapper;
+using MoreLinq;
 using PictureAuction.Api.ServiceModel;
 using PictureAuction.Api.ServiceModel.Types;
 using ServiceStack.Common.Web;
@@ -110,7 +111,9 @@ namespace PictureAuction.Api.ServiceInterface.Services
                     var pba = Db.Select<PicturesByArtist>().Join(request.Artists, x => x.ArtistId, a => a.Id, (x, _) => x).ToList();
 
                     Db.DeleteAll(pba);
+
                     Db.SaveAll(pba.Select(x => new PicturesByArtist { ArtistId = x.ArtistId, PictureId = picture.Id }));
+                    Db.SaveAll(request.Artists.Select(x => new PicturesByArtist { ArtistId = x.Id, PictureId = picture.Id }).ExceptBy(pba, o => o.ArtistId).ToList());
                 }
                 if (request.Genres.Any())
                 {
@@ -165,7 +168,9 @@ namespace PictureAuction.Api.ServiceInterface.Services
                     var pba = Db.Select<PicturesByArtist>().Join(request.Artists, x => x.ArtistId, a => a.Id, (x, _) => x).ToList();
 
                     Db.DeleteAll(pba);
+
                     Db.SaveAll(pba.Select(x => new PicturesByArtist { ArtistId = x.ArtistId, PictureId = picture.Id }));
+                    Db.SaveAll(request.Artists.Select(x => new PicturesByArtist { ArtistId = x.Id, PictureId = picture.Id }).ExceptBy(pba, o => o.ArtistId).ToList());
                 }
                 if (request.Genres.Any())
                 {
