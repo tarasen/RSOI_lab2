@@ -1,5 +1,5 @@
 # RSOI_lab2
-REST service API. Picture gallery with ServiceStack, OrmLight and SqlServer.
+REST service API. Picture gallery with ServiceStack, OrmLite and SqlServer.
 
 Available routes:
 ```
