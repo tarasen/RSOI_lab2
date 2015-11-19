@@ -1,0 +1,18 @@
+﻿@inherits ViewPage<PictureAuction.Api.ServiceModel.Routes.AuthRoutes.AuthResponse>
+@{
+    ViewBag.Title = "Authorization";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form action="/login" method="POST">
+    <div>@Html.Hidden("ClientId", Model.ClientId)</div>
+    <div>@Html.Hidden("RedirectUri", Model.RedirectUri)</div>
+    <div>@Html.Hidden("State", Model.State)</div>
+    <div>
+        <b>@Html.Label("Login")</b> @Html.TextBox("Login")</div>
+    <div>
+        <b>@Html.Label("Password")</b> @Html.Password("Password")</div>
+    <p>
+        <button type="submit">Authoriza</button>
+    </p>
+</form>
