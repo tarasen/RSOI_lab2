@@ -9,6 +9,12 @@ POST		/picures
 PUT			/pictures/{id}
 DELETE		/pictures/{id}
 
+GET			/artists
+GET			/artists/{id}
+POST		/artists
+PUT			/artists/{id}
+DELETE		/artists/{id}
+
 GET 		/profile
 
 GET 		/auth
